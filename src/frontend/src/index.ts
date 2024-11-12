@@ -1,4 +1,4 @@
-export var SampleApp = ((): any => {
+export var App = ((): any => {
     function onButtonPressed() {
         alert("hello");
     }
