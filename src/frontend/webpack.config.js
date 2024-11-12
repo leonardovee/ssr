@@ -2,6 +2,8 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const libraryName = "App";
+
 module.exports = {
     target: "web",
     entry: "./src/index.ts",
@@ -15,10 +17,11 @@ module.exports = {
         ignored: /node_modules/
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        library: libraryName,
+        libraryExport: libraryName,
+        libraryTarget: "this",
         filename: 'js/[name].[fullhash].js',
-        publicPath: '/',
-        clean: true
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
